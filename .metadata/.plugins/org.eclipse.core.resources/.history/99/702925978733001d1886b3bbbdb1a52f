@@ -1,0 +1,5 @@
+package com.gabrielsousa.hrpayroll.entities;
+
+public class Horker {
+
+}

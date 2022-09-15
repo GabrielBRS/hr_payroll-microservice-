@@ -1,0 +1,21 @@
+package com.gabrielsousa.hrpayroll;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.loadbalancer.annotation.LoadBalancerClient;
+import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
+import org.springframework.cloud.openfeign.EnableFeignClients;
+
+import com.gabrielsousa.hrpayroll.config.loadbalancing.LoadBalancingConfig;
+
+@SpringBootApplication
+@EnableFeignClients
+@LoadBalancerClient(name="hr-worker", configuration=LoadBalancingConfig.class)
+@EnableEurekaClient
+public class HrPayrollApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(HrPayrollApplication.class, args);
+	}
+
+}

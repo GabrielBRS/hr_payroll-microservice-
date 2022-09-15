@@ -1,0 +1,5 @@
+package com.gabrielsousa.hrpayroll.resources;
+
+public class PaymentController {
+
+}

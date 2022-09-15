@@ -1,0 +1,5 @@
+package com.gabrielsousa.hrpayroll.feignclients;
+
+public interface WorkerFeingClient {
+
+}

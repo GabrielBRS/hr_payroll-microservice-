@@ -1,0 +1,5 @@
+package com.gabrielsousa.hrpayroll.config;
+
+public class AppConfig {
+
+}

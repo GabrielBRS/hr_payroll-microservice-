@@ -1,0 +1,17 @@
+package com.gabrielsousa.hrpayroll.config.circuitbreaker;
+
+//@Configuration
+public class CircuitBreakerConfig {
+
+//@Bean
+//public Customizer<ReactiveResilience4JCircuitBreakerFactory> defaultCustomizer() {
+//    return factory -> factory.configureDefault(id -> new Resilience4JConfigBuilder(id)
+//            .circuitBreakerConfig(CircuitBreakerConfig.ofDefaults())
+//            .timeLimiterConfig(TimeLimiterConfig.custom().timeoutDuration(Duration.ofSeconds(4)).build()).build());
+//}
+//
+//private static io.github.resilience4j.circuitbreaker.CircuitBreakerConfig ofDefaults() {
+//	// TODO Auto-generated method stub
+//	return null;
+//}
+}

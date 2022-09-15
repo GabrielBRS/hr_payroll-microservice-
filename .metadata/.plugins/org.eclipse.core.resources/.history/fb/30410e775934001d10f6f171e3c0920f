@@ -1,0 +1,40 @@
+package com.gabrielsousa.hrpayroll.services;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.gabrielsousa.hrpayroll.entities.Payment;
+import com.gabrielsousa.hrpayroll.entities.Worker;
+import com.gabrielsousa.hrpayroll.feignclients.WorkerFeingClient;
+
+import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
+
+@Service
+@CircuitBreaker
+public class PaymentService {
+	
+//	@Autowired
+//	private RestTemplate restTemplate;
+	
+	@Autowired
+	private WorkerFeingClient workerFeingClient;
+	
+//	@Value("${hr-worker.host}")
+//	private String workerHost;
+
+	public Payment getPayment(long workerId, int days) {
+		
+		//
+			//Feito com restTemplate que não é um microsserviço
+		//
+		
+//		Map<String,String> uriVariables = new HashMap<>();
+//		uriVariables.put("id", ""+workerId);
+//		Worker worker = restTemplate.getForObject(workerHost + "/workers/{id}",
+//				Worker.class, uriVariables);
+//		return new Payment(worker.getName(), worker.getDailyIncome(), days);
+
+		Worker worker = workerFeingClient.findById(workerId).getBody();
+		return new Payment(worker.getName(), worker.getDailyIncome(), days);
+	}
+}

@@ -1,0 +1,23 @@
+package com.gabrielsousa.hrpayroll.services;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
+
+import com.gabrielsousa.hrpayroll.entities.Payment;
+
+@Service
+public class PaymentService {
+	
+	@Autowired
+	private RestTemplate restTemplate;
+	
+	@Value("${hr-worker.host}")
+	private String workerHost;
+
+	public Payment getPayment(long workerId, int days) {
+		Worker worker = restTemplate.getForObject(null, null);
+		return new Payment("Bob", 200.00, days);
+	}
+}
