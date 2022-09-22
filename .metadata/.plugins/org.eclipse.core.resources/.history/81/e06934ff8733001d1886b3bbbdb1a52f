@@ -1,9 +1,0 @@
-package com.gabrielsousa.hrpayroll.repositories;
-
-import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Repository;
-
-@Repository
-public interface HorkerRepository extends JpaRepository<Worker, Long> {
-
-}
